@@ -1,27 +1,16 @@
-import TopHeader from './components/TopHeader';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import HowItWorks from './components/HowItWorks';
-import AboutSection from './components/AboutSection';
-import ServicesSection from './components/ServicesSection';
-import BottomSection from './components/BottomSection';
-import ContactSection from './components/ContactSection';
-import ChatWidget from './components/ChatWidget';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <TopHeader />
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <HowItWorks />
-      <ServicesSection />
-      <BottomSection />
-      <ContactSection />
-      <ChatWidget />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      </Routes>
+    </Router>
   );
 }

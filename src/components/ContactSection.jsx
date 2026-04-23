@@ -1,6 +1,44 @@
+import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        setSuccess(true);
+        setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setSuccess(false), 3000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -56,11 +94,15 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100">
-              <form className="grid sm:grid-cols-2 gap-4">
+              <form className="grid sm:grid-cols-2 gap-4" onSubmit={handleSubmit}>
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold text-gray-700">Full Name</label>
                   <input 
                     type="text" 
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
                     placeholder="John Doe" 
                     className="w-full px-4 py-3 text-sm rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
@@ -69,6 +111,10 @@ export default function ContactSection() {
                   <label className="text-xs font-bold text-gray-700">Email Address</label>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     placeholder="john@example.com" 
                     className="w-full px-4 py-3 text-sm rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
@@ -77,33 +123,56 @@ export default function ContactSection() {
                   <label className="text-xs font-bold text-gray-700">Phone Number</label>
                   <input 
                     type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
                     placeholder="+91 XXXXX XXXXX" 
                     className="w-full px-4 py-3 text-sm rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-gray-700">Subject</label>
-                  <input 
-                    type="text" 
-                    placeholder="General Inquiry" 
-                    className="w-full px-4 py-3 text-sm rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
+                  <label className="text-xs font-bold text-gray-700">Service / Subject</label>
+                  <select 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 text-sm rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
+                  >
+                    <option value="">Select a Service</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="OPD Appointment">OPD Appointment</option>
+                    <option value="Emergency / Admission">Emergency / Admission</option>
+                    <option value="Vaccination">Vaccination</option>
+                    <option value="Video Consultation">Video Consultation</option>
+                    <option value="Specialist Information">Specialist Information</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
                 <div className="sm:col-span-2 space-y-1.5">
                   <label className="text-xs font-bold text-gray-700">Your Message</label>
                   <textarea 
                     rows="4" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     placeholder="How can we help you?" 
                     className="w-full px-4 py-3 text-sm rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   ></textarea>
                 </div>
-                <div className="sm:col-span-2 pt-2">
+                <div className="sm:col-span-2 pt-2 flex items-center justify-between">
                   <button 
                     type="submit" 
-                    className="w-full sm:w-auto px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all flex items-center justify-center gap-2 shadow-md shadow-primary/20 text-sm"
+                    disabled={loading}
+                    className="w-full sm:w-auto px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all flex items-center justify-center gap-2 shadow-md shadow-primary/20 text-sm disabled:opacity-70"
                   >
-                    Send Message <Send className="w-4 h-4" />
+                    {loading ? 'Sending...' : (
+                      <>Send Message <Send className="w-4 h-4" /></>
+                    )}
                   </button>
+                  {success && <span className="text-green-600 font-medium text-sm ml-4">Message sent!</span>}
                 </div>
               </form>
             </div>

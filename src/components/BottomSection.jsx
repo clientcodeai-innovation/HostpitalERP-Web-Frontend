@@ -29,9 +29,39 @@ export default function BottomSection() {
     gender: '', religion: '', phone: '',
     address: '', city: '', state: '', consultant: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [popup, setPopup] = useState({ show: false, type: '', message: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch('http://localhost:5000/api/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        setPopup({ show: true, type: 'success', message: 'Your appointment has been booked successfully! We will contact you soon.' });
+        setFormData({
+          date: '', patientName: '', guardianName: '',
+          ageYears: '', ageMonths: '', ageDays: '',
+          gender: '', religion: '', phone: '',
+          address: '', city: '', state: '', consultant: '',
+        });
+        setStep(1);
+      } else {
+        setPopup({ show: true, type: 'error', message: 'Please fill all required fields and try again.' });
+      }
+    } catch (error) {
+      setPopup({ show: true, type: 'error', message: 'Network error. Please try again later.' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,7 +96,7 @@ export default function BottomSection() {
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${step === 2 ? 'bg-primary text-white' : 'bg-primary-50 text-primary'}`}>2</div>
             </div>
 
-            <form className="space-y-3.5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-3.5" onSubmit={handleSubmit}>
               {step === 1 && (
                 <>
                   {/* Date */}
@@ -142,9 +172,12 @@ export default function BottomSection() {
                     </button>
                     <button
                       type="submit"
-                      className="flex-1 bg-primary hover:bg-primary-dark text-white py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-1 transition-all hover:shadow-lg hover:shadow-primary/30"
+                      disabled={loading}
+                      className="flex-1 bg-primary hover:bg-primary-dark text-white py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-1 transition-all hover:shadow-lg hover:shadow-primary/30 disabled:opacity-70"
                     >
-                      Confirm <ChevronRight className="w-4 h-4" />
+                      {loading ? 'Confirming...' : (
+                        <>Confirm <ChevronRight className="w-4 h-4" /></>
+                      )}
                     </button>
                   </div>
                 </>
@@ -185,6 +218,39 @@ export default function BottomSection() {
           </div>
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {popup.show && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity">
+          <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl transform transition-all">
+            <div className="text-center">
+              {popup.type === 'success' ? (
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                  <CheckCircle2 className="w-10 h-10 text-green-500" />
+                </div>
+              ) : (
+                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-5 text-red-500 font-bold text-4xl">
+                  !
+                </div>
+              )}
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                {popup.type === 'success' ? 'Success!' : 'Oops!'}
+              </h3>
+              <p className="text-gray-500 mb-6 leading-relaxed">
+                {popup.message}
+              </p>
+              <button
+                onClick={() => setPopup({ show: false, type: '', message: '' })}
+                className={`w-full py-3.5 rounded-xl text-white font-bold transition-all shadow-md ${
+                  popup.type === 'success' ? 'bg-green-500 hover:bg-green-600 hover:shadow-green-500/30' : 'bg-red-500 hover:bg-red-600 hover:shadow-red-500/30'
+                }`}
+              >
+                {popup.type === 'success' ? 'Great' : 'Try Again'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
