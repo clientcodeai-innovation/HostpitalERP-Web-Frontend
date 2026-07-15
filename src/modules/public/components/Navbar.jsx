@@ -3,7 +3,8 @@ import {
   Menu, X, Calendar as CalendarIcon, User, ChevronDown,
   Stethoscope, Syringe, Baby, Heart, Activity, Video, 
   FlaskConical, Shield, Phone, Building2, Users, FileText,
-  Clock, MapPin, Info, Newspaper, Award, MessageSquare
+  Clock, MapPin, Info, Newspaper, Award, MessageSquare, 
+  HelpCircle, Package, Pill, LogIn
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from '../../../shared/theme/ThemeToggle';
@@ -20,6 +21,7 @@ const navLinks = [
       { label: 'Our Doctors', href: '/about/doctors', icon: Users, desc: 'Expert medical team' },
       { label: 'Awards & Recognition', href: '/about/awards', icon: Award, desc: 'Our achievements' },
       { label: 'Testimonials', href: '/about/testimonials', icon: MessageSquare, desc: 'Patient stories' },
+      { label: 'FAQs', href: '/about/faqs', icon: HelpCircle, desc: 'Common questions' },
     ]
   },
   { 
@@ -32,6 +34,7 @@ const navLinks = [
       { label: 'Video Consultation', href: '/services/video-consultation', icon: Video, desc: 'Online doctor visit' },
       { label: 'Neonatal Care (NICU)', href: '/services/nicu-care', icon: Baby, desc: 'Newborn intensive care' },
       { label: 'Lab & Diagnostics', href: '/services/lab-diagnostics', icon: FlaskConical, desc: 'Testing & reports' },
+      { label: 'Health Packages', href: '/services/packages', icon: Package, desc: 'Checkup & immunity plans' },
     ]
   },
   { 
@@ -42,6 +45,14 @@ const navLinks = [
       { label: 'Constitutional Care', href: '/departments/constitutional-care', icon: Heart, desc: 'Deep-acting homeopathy' },
       { label: 'Allergies & Asthma', href: '/departments/allergies-asthma', icon: Shield, desc: 'Immunity building' },
       { label: 'Acute Fevers', href: '/departments/acute-fevers', icon: Stethoscope, desc: 'Gentle fever management' },
+    ]
+  },
+  {
+    label: 'Resources',
+    href: '#',
+    children: [
+      { label: 'Health Blog', href: '/resources/blog', icon: Newspaper, desc: 'Health tips & articles' },
+      { label: 'Order Medicines', href: '/resources/pharmacy', icon: Pill, desc: 'Refill your prescriptions' },
     ]
   },
   { label: 'How It Works', href: '/#how-it-works' },
@@ -179,13 +190,10 @@ export default function Navbar() {
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <ThemeToggle />
-
-
-            <Link to="/admin/login" className="hidden sm:inline-block">
-              <Button variant="outline" size="sm" className="gap-1.5">
-                <User className="w-3.5 h-3.5" />
-                Portal
+            <Link to="/admin/login" className="hidden lg:inline-block">
+              <Button variant="ghost" size="sm" className="gap-1.5">
+                <LogIn className="w-3.5 h-3.5" />
+                Admin
               </Button>
             </Link>
             
@@ -195,6 +203,8 @@ export default function Navbar() {
                 Book Appointment
               </Button>
             </a>
+
+            <ThemeToggle />
 
             <Button 
               variant="ghost" 

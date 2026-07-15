@@ -8,6 +8,7 @@ import AboutHospitalPage from '../modules/public/pages/about/AboutHospitalPage';
 import OurDoctorsPage from '../modules/public/pages/about/OurDoctorsPage';
 import AwardsPage from '../modules/public/pages/about/AwardsPage';
 import TestimonialsPage from '../modules/public/pages/about/TestimonialsPage';
+import FaqsPage from '../modules/public/pages/about/FaqsPage';
 
 // Service Pages
 import OpdConsultationPage from '../modules/public/pages/services/OpdConsultationPage';
@@ -16,6 +17,11 @@ import VaccinationPage from '../modules/public/pages/services/VaccinationPage';
 import VideoConsultationPage from '../modules/public/pages/services/VideoConsultationPage';
 import NicuCarePage from '../modules/public/pages/services/NicuCarePage';
 import LabDiagnosticsPage from '../modules/public/pages/services/LabDiagnosticsPage';
+import PackagesPage from '../modules/public/pages/services/PackagesPage';
+
+// Resource Pages
+import BlogPage from '../modules/public/pages/resources/BlogPage';
+import PharmacyPage from '../modules/public/pages/resources/PharmacyPage';
 
 // Department Pages
 import PediatricsPage from '../modules/public/pages/departments/PediatricsPage';
@@ -69,6 +75,7 @@ export default function App() {
             <Route path="/about/doctors" element={<OurDoctorsPage />} />
             <Route path="/about/awards" element={<AwardsPage />} />
             <Route path="/about/testimonials" element={<TestimonialsPage />} />
+            <Route path="/about/faqs" element={<FaqsPage />} />
 
             {/* Service Pages */}
             <Route path="/services/opd-consultation" element={<OpdConsultationPage />} />
@@ -77,12 +84,17 @@ export default function App() {
             <Route path="/services/video-consultation" element={<VideoConsultationPage />} />
             <Route path="/services/nicu-care" element={<NicuCarePage />} />
             <Route path="/services/lab-diagnostics" element={<LabDiagnosticsPage />} />
+            <Route path="/services/packages" element={<PackagesPage />} />
 
             {/* Department Pages */}
             <Route path="/departments/pediatrics" element={<PediatricsPage />} />
             <Route path="/departments/constitutional-care" element={<ConstitutionalCarePage />} />
             <Route path="/departments/allergies-asthma" element={<AllergiesAsthmaPage />} />
             <Route path="/departments/acute-fevers" element={<AcuteFeversPage />} />
+
+            {/* Resource Pages */}
+            <Route path="/resources/blog" element={<BlogPage />} />
+            <Route path="/resources/pharmacy" element={<PharmacyPage />} />
           </Route>
 
           <Route path="/admin/login" element={<AdminLogin />} />
