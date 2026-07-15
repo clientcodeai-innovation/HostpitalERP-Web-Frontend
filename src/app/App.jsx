@@ -1,11 +1,44 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from '../modules/public/pages/LandingPage';
+import PublicLayout from '../modules/public/layouts/PublicLayout';
+import PlaceholderPage from '../modules/public/pages/PlaceholderPage';
+
+// About Pages
+import AboutHospitalPage from '../modules/public/pages/about/AboutHospitalPage';
+import OurDoctorsPage from '../modules/public/pages/about/OurDoctorsPage';
+import AwardsPage from '../modules/public/pages/about/AwardsPage';
+import TestimonialsPage from '../modules/public/pages/about/TestimonialsPage';
+import FaqsPage from '../modules/public/pages/about/FaqsPage';
+
+// Service Pages
+import OpdConsultationPage from '../modules/public/pages/services/OpdConsultationPage';
+import EmergencyCarePage from '../modules/public/pages/services/EmergencyCarePage';
+import VaccinationPage from '../modules/public/pages/services/VaccinationPage';
+import VideoConsultationPage from '../modules/public/pages/services/VideoConsultationPage';
+import NicuCarePage from '../modules/public/pages/services/NicuCarePage';
+import LabDiagnosticsPage from '../modules/public/pages/services/LabDiagnosticsPage';
+import PackagesPage from '../modules/public/pages/services/PackagesPage';
+
+// Resource Pages
+import BlogPage from '../modules/public/pages/resources/BlogPage';
+import PharmacyPage from '../modules/public/pages/resources/PharmacyPage';
+
+// Department Pages
+import PediatricsPage from '../modules/public/pages/departments/PediatricsPage';
+import ConstitutionalCarePage from '../modules/public/pages/departments/ConstitutionalCarePage';
+import AllergiesAsthmaPage from '../modules/public/pages/departments/AllergiesAsthmaPage';
+import AcuteFeversPage from '../modules/public/pages/departments/AcuteFeversPage';
+
 import AdminLogin from '../modules/auth/pages/AdminLogin';
 import AdminDashboard from '../modules/administration/pages/AdminDashboard';
 import { ThemeProvider } from '../shared/theme/ThemeProvider';
 import { AppLayout } from '../shared/layout/AppLayout';
 import { ProtectedRoute } from './ProtectedRoute';
 import { ROLES } from './AuthContext';
+import { 
+  Building2, Users, Award, MessageSquare, Stethoscope, Activity, 
+  Syringe, Video, Baby, FlaskConical, Heart, Shield
+} from 'lucide-react';
 
 // Admin Module Pages
 import PatientsPage from '../modules/patient-care/pages/PatientsPage';
@@ -33,8 +66,37 @@ export default function App() {
     <ThemeProvider defaultTheme="system" storageKey="erp-theme">
       <Router>
         <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<LandingPage />} />
+          {/* Public Routes with Layout */}
+          <Route element={<PublicLayout />}>
+            <Route path="/" element={<LandingPage />} />
+            
+            {/* About Pages */}
+            <Route path="/about/hospital" element={<AboutHospitalPage />} />
+            <Route path="/about/doctors" element={<OurDoctorsPage />} />
+            <Route path="/about/awards" element={<AwardsPage />} />
+            <Route path="/about/testimonials" element={<TestimonialsPage />} />
+            <Route path="/about/faqs" element={<FaqsPage />} />
+
+            {/* Service Pages */}
+            <Route path="/services/opd-consultation" element={<OpdConsultationPage />} />
+            <Route path="/services/emergency-care" element={<EmergencyCarePage />} />
+            <Route path="/services/vaccination" element={<VaccinationPage />} />
+            <Route path="/services/video-consultation" element={<VideoConsultationPage />} />
+            <Route path="/services/nicu-care" element={<NicuCarePage />} />
+            <Route path="/services/lab-diagnostics" element={<LabDiagnosticsPage />} />
+            <Route path="/services/packages" element={<PackagesPage />} />
+
+            {/* Department Pages */}
+            <Route path="/departments/pediatrics" element={<PediatricsPage />} />
+            <Route path="/departments/constitutional-care" element={<ConstitutionalCarePage />} />
+            <Route path="/departments/allergies-asthma" element={<AllergiesAsthmaPage />} />
+            <Route path="/departments/acute-fevers" element={<AcuteFeversPage />} />
+
+            {/* Resource Pages */}
+            <Route path="/resources/blog" element={<BlogPage />} />
+            <Route path="/resources/pharmacy" element={<PharmacyPage />} />
+          </Route>
+
           <Route path="/admin/login" element={<AdminLogin />} />
           
           {/* Admin Routes wrapped in AppLayout and ProtectedRoute */}
