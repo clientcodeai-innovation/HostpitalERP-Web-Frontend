@@ -84,7 +84,7 @@ export default function AppointmentsPage() {
                   <th className="h-10 px-4 text-left font-medium text-muted-foreground">Time</th>
                   <th className="h-10 px-4 text-left font-medium text-muted-foreground">Type</th>
                   <th className="h-10 px-4 text-left font-medium text-muted-foreground">Status</th>
-                  <th className="h-10 px-4 text-right font-medium text-muted-foreground">Actions</th>
+                  <th className="h-10 px-4 text-right font-medium text-muted-foreground">Actions is under proceess</th>
                 </tr>
               </thead>
               <tbody>
