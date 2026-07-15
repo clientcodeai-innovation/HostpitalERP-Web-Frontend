@@ -28,7 +28,7 @@ export default function VideoConsultationPage() {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1576091160550-2173ff9e5950?q=80&w=1000&auto=format&fit=crop" 
+              src="/images/video_consultation.png" 
               alt="Doctor on video call" 
               className="rounded-3xl shadow-2xl object-cover h-[400px] w-full"
             />

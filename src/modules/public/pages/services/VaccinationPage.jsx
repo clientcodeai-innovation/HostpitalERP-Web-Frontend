@@ -29,7 +29,7 @@ export default function VaccinationPage() {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1633383020556-9d6209e564bd?q=80&w=1000&auto=format&fit=crop" 
+              src="/images/vaccination.png" 
               alt="Child getting vaccinated" 
               className="rounded-3xl shadow-2xl object-cover h-[400px] w-full"
             />
