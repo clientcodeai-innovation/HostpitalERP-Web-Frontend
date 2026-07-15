@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ChatWidget from '../components/ChatWidget';
 
 export default function PublicLayout() {
   const location = useLocation();
@@ -20,7 +21,7 @@ export default function PublicLayout() {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col relative overflow-x-hidden">
       <Navbar />
       <main className="flex-1">
         <div key={location.pathname} className="page-wrapper page-transition">
@@ -28,6 +29,7 @@ export default function PublicLayout() {
         </div>
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }

@@ -4,7 +4,6 @@ import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import BottomSection from '../components/BottomSection';
 import ContactSection from '../components/ContactSection';
-import ChatWidget from '../components/ChatWidget';
 
 export default function LandingPage() {
   return (
@@ -15,7 +14,6 @@ export default function LandingPage() {
       <div id="services"><ServicesSection /></div>
       <div id="departments"><BottomSection /></div>
       <div id="contact"><ContactSection /></div>
-      <ChatWidget />
     </div>
   );
 }
