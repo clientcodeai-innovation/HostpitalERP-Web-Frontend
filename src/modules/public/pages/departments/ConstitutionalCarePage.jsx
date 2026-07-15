@@ -20,7 +20,7 @@ export default function ConstitutionalCarePage() {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1616671285418-472e90c8f58b?q=80&w=1000&auto=format&fit=crop" 
+              src="/images/constitutional_care.png" 
               alt="Homeopathic medicine" 
               className="rounded-3xl shadow-2xl object-cover h-[400px] w-full"
             />

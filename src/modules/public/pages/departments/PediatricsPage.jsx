@@ -21,7 +21,7 @@ export default function PediatricsPage() {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1542890875-3505c87e1f40?q=80&w=1000&auto=format&fit=crop" 
+              src="/images/pediatrics.png" 
               alt="Pediatrician with child" 
               className="rounded-3xl shadow-2xl object-cover h-[400px] w-full"
             />
