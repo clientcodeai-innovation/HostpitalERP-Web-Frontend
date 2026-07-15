@@ -5,50 +5,50 @@ import {
   FlaskConical, Shield, Phone, Building2, Users, FileText,
   Clock, MapPin, Info, Newspaper, Award, MessageSquare
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from '../../../shared/theme/ThemeToggle';
 import { Button } from '../../../shared/ui/Button';
 import { Leaf } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Home', href: '#' },
+  { label: 'Home', href: '/' },
   { 
     label: 'About', 
-    href: '#about',
+    href: '/#about',
     children: [
-      { label: 'About Hospital', href: '#about', icon: Building2, desc: 'Our mission & vision' },
-      { label: 'Our Doctors', href: '#doctors', icon: Users, desc: 'Expert medical team' },
-      { label: 'Awards & Recognition', href: '#awards', icon: Award, desc: 'Our achievements' },
-      { label: 'Testimonials', href: '#testimonials', icon: MessageSquare, desc: 'Patient stories' },
+      { label: 'About Hospital', href: '/about/hospital', icon: Building2, desc: 'Our mission & vision' },
+      { label: 'Our Doctors', href: '/about/doctors', icon: Users, desc: 'Expert medical team' },
+      { label: 'Awards & Recognition', href: '/about/awards', icon: Award, desc: 'Our achievements' },
+      { label: 'Testimonials', href: '/about/testimonials', icon: MessageSquare, desc: 'Patient stories' },
     ]
   },
   { 
     label: 'Services', 
-    href: '#services',
+    href: '/#services',
     children: [
-      { label: 'OPD Consultation', href: '#services', icon: Stethoscope, desc: 'Regular checkups' },
-      { label: 'Emergency Care', href: '#services', icon: Activity, desc: '24/7 critical care' },
-      { label: 'Vaccination', href: '#services', icon: Syringe, desc: 'Immunization tracking' },
-      { label: 'Video Consultation', href: '#services', icon: Video, desc: 'Online doctor visit' },
-      { label: 'Neonatal Care (NICU)', href: '#services', icon: Baby, desc: 'Newborn intensive care' },
-      { label: 'Lab & Diagnostics', href: '#services', icon: FlaskConical, desc: 'Testing & reports' },
+      { label: 'OPD Consultation', href: '/services/opd-consultation', icon: Stethoscope, desc: 'Regular checkups' },
+      { label: 'Emergency Care', href: '/services/emergency-care', icon: Activity, desc: '24/7 critical care' },
+      { label: 'Vaccination', href: '/services/vaccination', icon: Syringe, desc: 'Immunization tracking' },
+      { label: 'Video Consultation', href: '/services/video-consultation', icon: Video, desc: 'Online doctor visit' },
+      { label: 'Neonatal Care (NICU)', href: '/services/nicu-care', icon: Baby, desc: 'Newborn intensive care' },
+      { label: 'Lab & Diagnostics', href: '/services/lab-diagnostics', icon: FlaskConical, desc: 'Testing & reports' },
     ]
   },
   { 
     label: 'Departments', 
-    href: '#services',
+    href: '/#departments',
     children: [
-      { label: 'Pediatrics', href: '#services', icon: Baby, desc: 'Child healthcare' },
-      { label: 'Constitutional Care', href: '#services', icon: Heart, desc: 'Deep-acting homeopathy' },
-      { label: 'Allergies & Asthma', href: '#services', icon: Shield, desc: 'Immunity building' },
-      { label: 'Acute Fevers', href: '#services', icon: Stethoscope, desc: 'Gentle fever management' },
+      { label: 'Pediatrics', href: '/departments/pediatrics', icon: Baby, desc: 'Child healthcare' },
+      { label: 'Constitutional Care', href: '/departments/constitutional-care', icon: Heart, desc: 'Deep-acting homeopathy' },
+      { label: 'Allergies & Asthma', href: '/departments/allergies-asthma', icon: Shield, desc: 'Immunity building' },
+      { label: 'Acute Fevers', href: '/departments/acute-fevers', icon: Stethoscope, desc: 'Gentle fever management' },
     ]
   },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
-function DropdownMenu({ items, isOpen, onClose }) {
+const DropdownMenu = ({ items, isOpen, onClose, currentPath }) => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -70,20 +70,26 @@ function DropdownMenu({ items, isOpen, onClose }) {
     >
       <div className="bg-popover border border-border rounded-xl shadow-xl shadow-black/10 p-2 min-w-[280px] backdrop-blur-xl">
         {items.map((item, i) => (
-          <a
+          <Link
             key={i}
-            href={item.href}
+            to={item.href}
             onClick={onClose}
-            className="flex items-start gap-3 px-3 py-2.5 rounded-lg text-popover-foreground hover:bg-muted transition-colors group"
+            className={`flex items-start gap-3 px-3 py-2.5 rounded-lg transition-colors group ${
+              currentPath === item.href 
+                ? 'bg-primary/10 text-primary' 
+                : 'text-popover-foreground hover:bg-muted'
+            }`}
           >
-            <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary/20 transition-colors">
+            <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+              currentPath === item.href ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+            }`}>
               <item.icon className="w-4 h-4 text-primary" />
             </div>
             <div>
               <div className="text-sm font-medium">{item.label}</div>
               <div className="text-xs text-muted-foreground">{item.desc}</div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
@@ -91,10 +97,19 @@ function DropdownMenu({ items, isOpen, onClose }) {
 }
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const isLinkActive = (link) => {
+    if (link.children) {
+      return link.children.some(child => currentPath === child.href);
+    }
+    return currentPath === link.href;
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -123,7 +138,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <div key={link.label} className="relative">
                 {link.children ? (
@@ -131,8 +146,8 @@ export default function Navbar() {
                     <button
                       onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                       className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                        openDropdown === link.label 
-                          ? 'text-foreground bg-muted' 
+                        openDropdown === link.label || isLinkActive(link)
+                          ? 'text-primary bg-primary/10' 
                           : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
                       }`}
                     >
@@ -143,15 +158,20 @@ export default function Navbar() {
                       items={link.children} 
                       isOpen={openDropdown === link.label}
                       onClose={() => setOpenDropdown(null)}
+                      currentPath={currentPath}
                     />
                   </>
                 ) : (
-                  <a
-                    href={link.href}
-                    className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-md transition-colors"
+                  <Link
+                    to={link.href}
+                    className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                      isLinkActive(link)
+                        ? 'text-primary bg-primary/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                    }`}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
@@ -179,7 +199,7 @@ export default function Navbar() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="lg:hidden" 
+              className="xl:hidden" 
               onClick={() => { setMobileOpen(!mobileOpen); setMobileExpanded(null); }}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -190,7 +210,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-background border-b border-border shadow-xl max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden absolute top-full left-0 w-full bg-background border-b border-border shadow-xl max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <div key={link.label}>
@@ -198,7 +218,11 @@ export default function Navbar() {
                   <>
                     <button
                       onClick={() => setMobileExpanded(mobileExpanded === link.label ? null : link.label)}
-                      className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
+                      className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                        mobileExpanded === link.label || isLinkActive(link)
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-foreground hover:bg-muted'
+                      }`}
                     >
                       {link.label}
                       <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${mobileExpanded === link.label ? 'rotate-180' : ''}`} />
@@ -206,27 +230,31 @@ export default function Navbar() {
                     {mobileExpanded === link.label && (
                       <div className="ml-4 pl-4 border-l border-border space-y-1 py-1">
                         {link.children.map((child, i) => (
-                          <a
+                          <Link
                             key={i}
-                            href={child.href}
-                            className="flex items-center gap-3 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
+                            to={child.href}
+                            className={`flex items-center gap-3 px-3 py-2.5 text-sm rounded-md transition-colors ${
+                              currentPath === child.href ? 'text-primary bg-primary/5 font-medium' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                            }`}
                             onClick={() => setMobileOpen(false)}
                           >
                             <child.icon className="w-4 h-4 text-primary shrink-0" />
                             {child.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
-                  <a 
-                    href={link.href} 
-                    className="block px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
+                  <Link 
+                    to={link.href} 
+                    className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      isLinkActive(link) ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-muted'
+                    }`}
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}

@@ -167,3 +167,34 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(22, 163, 74, 0.5);
 }
+
+/* Page & Component Transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Automatically stagger and animate sections inside the page wrapper */
+.page-wrapper > div > section {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.page-wrapper > div > section:nth-of-type(1) { animation-delay: 0.1s; }
+.page-wrapper > div > section:nth-of-type(2) { animation-delay: 0.2s; }
+.page-wrapper > div > section:nth-of-type(3) { animation-delay: 0.3s; }
+.page-wrapper > div > section:nth-of-type(4) { animation-delay: 0.4s; }
+.page-wrapper > div > section:nth-of-type(5) { animation-delay: 0.5s; }
+.page-wrapper > div > section:nth-of-type(6) { animation-delay: 0.6s; }
+.page-wrapper > div > section:nth-of-type(7) { animation-delay: 0.7s; }
+.page-wrapper > div > section:nth-of-type(8) { animation-delay: 0.8s; }
