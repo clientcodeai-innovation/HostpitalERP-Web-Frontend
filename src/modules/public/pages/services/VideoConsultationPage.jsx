@@ -16,7 +16,7 @@ export default function VideoConsultationPage() {
               Expert Care From Home
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Consult with our pediatricians and homeopathic experts through secure, high-quality video calls without leaving your home.
+              Consult with our pediatricians and ayurvedic experts through secure, high-quality video calls without leaving your home.
             </p>
             <div className="flex gap-4">
               <Button size="lg" className="rounded-full gap-2" asChild>

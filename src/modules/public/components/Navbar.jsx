@@ -42,7 +42,7 @@ const navLinks = [
     href: '/#departments',
     children: [
       { label: 'Pediatrics', href: '/departments/pediatrics', icon: Baby, desc: 'Child healthcare' },
-      { label: 'Constitutional Care', href: '/departments/constitutional-care', icon: Heart, desc: 'Deep-acting homeopathy' },
+      { label: 'Constitutional Care', href: '/departments/constitutional-care', icon: Heart, desc: 'Deep-acting ayurveda' },
       { label: 'Allergies & Asthma', href: '/departments/allergies-asthma', icon: Shield, desc: 'Immunity building' },
       { label: 'Acute Fevers', href: '/departments/acute-fevers', icon: Stethoscope, desc: 'Gentle fever management' },
     ]
@@ -144,7 +144,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold leading-none text-foreground">Hari Om</span>
-              <span className="text-xs font-semibold text-primary tracking-wider uppercase">Homeo Clinic</span>
+              <span className="text-xs font-semibold text-primary tracking-wider uppercase">Ayurved Clinic</span>
             </div>
           </a>
 

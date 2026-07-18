@@ -23,7 +23,7 @@ const testimonials = [
     name: "Sneha Patel",
     relation: "Mother of 7-year-old",
     rating: 4,
-    text: "We opted for constitutional homeopathic care for my daughter's chronic asthma. After 6 months of treatment here, her immunity has improved drastically. Highly recommend their holistic approach.",
+    text: "We opted for constitutional ayurvedic care for my daughter's chronic asthma. After 6 months of treatment here, her immunity has improved drastically. Highly recommend their holistic approach.",
     date: "2 months ago"
   },
   {

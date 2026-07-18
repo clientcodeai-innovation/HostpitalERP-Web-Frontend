@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { PageHeader } from '../../../shared/layout/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../shared/ui/Card';
 import { Badge } from '../../../shared/ui/Badge';
@@ -19,7 +19,7 @@ export default function IVRPage() {
 
       {/* IVR Menu Preview */}
       <Card>
-        <CardHeader><CardTitle className="text-base">IVR Menu â€” Hari Om Homeo Clinic</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base">IVR Menu â€” Hari Om Ayurved Clinic</CardTitle></CardHeader>
         <CardContent>
           <div className="space-y-2 text-sm">
             {[

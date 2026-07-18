@@ -6,7 +6,7 @@ export default function PackagesPage() {
   const packages = [
     { title: "Child Wellness Plan", price: "₹2,999", desc: "Annual checkups, growth monitoring, and unlimited text consultations." },
     { title: "Immunity Booster Pack", price: "₹1,499", desc: "3-month constitutional medicine course to build robust immunity against seasonal flus." },
-    { title: "Complete Family Care", price: "₹4,999", desc: "Comprehensive homeopathic care for up to 4 family members including basic lab tests." }
+    { title: "Complete Family Care", price: "₹4,999", desc: "Comprehensive ayurvedic care for up to 4 family members including basic lab tests." }
   ];
 
   return (

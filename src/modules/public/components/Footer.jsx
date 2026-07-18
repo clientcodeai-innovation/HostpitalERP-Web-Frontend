@@ -15,11 +15,11 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-bold text-xl tracking-tight text-foreground block leading-none">Hari Om</span>
-                <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">Homeo Clinic</span>
+                <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">Ayurved Clinic</span>
               </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Experience the power of natural healing. We provide gentle, safe, and effective homeopathic care for your entire family with a special focus on pediatric health.
+              Experience the power of natural healing. We provide gentle, safe, and effective ayurvedic care for your entire family with a special focus on pediatric health.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            &copy; {new Date().getFullYear()} Hari Om Homeo Clinic. All rights reserved.
+            &copy; {new Date().getFullYear()} Hari Om Ayurved Clinic. All rights reserved.
           </p>
           <div className="flex items-center gap-1 text-sm text-muted-foreground bg-primary/5 px-4 py-2 rounded-full border border-primary/10">
             Made with <Heart className="w-4 h-4 text-red-500 fill-red-500 mx-1" /> by <span className="font-semibold text-foreground ml-1">ClientCode AI</span>
