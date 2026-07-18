@@ -1,11 +1,11 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { CheckCircle2, Phone, Shield, ChevronRight, ChevronLeft, AlertCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../shared/ui/Card';
 import { Button } from '../../../shared/ui/Button';
 import { Input } from '../../../shared/ui/Input';
 
 const whyChooseUs = [
-  'Expert Homeopathic Pediatricians',
+  'Expert Ayurvedic Pediatricians',
   'Gentle, constitutional remedies with no side-effects',
   'Holistic approach to child immunity',
   'Personalized constitutional care for every child',
@@ -13,9 +13,9 @@ const whyChooseUs = [
 ];
 
 const consultants = [
-  'Homeopathic Pediatrician (Dr. Vijay)',
-  'Homeopathic Physician (Dr. Sweta)',
-  'Senior Homeopath (Dr. Vijay & Dr. Sweta)'
+  'Ayurvedic Pediatrician (Dr. Vijay)',
+  'Ayurvedic Physician (Dr. Sweta)',
+  'Senior Ayurvedic Doctor (Dr. Vijay & Dr. Sweta)'
 ];
 const genders = ['Male', 'Female', 'Other'];
 const religions = ['Hinduism', 'Islam', 'Christianity', 'Sikhism', 'Buddhism', 'Other'];
@@ -62,7 +62,7 @@ export default function BottomSection() {
           {/* Why Choose Us */}
           <Card className="bg-muted/30 relative overflow-hidden border-border/50">
             <CardHeader>
-              <CardTitle>Why Choose Hari Om Homeo Clinic?</CardTitle>
+              <CardTitle>Why Choose Hari Om Ayurved Clinic?</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4 relative z-10">

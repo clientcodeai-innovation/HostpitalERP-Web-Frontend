@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { Badge } from '../../../shared/ui/Badge';
 import { Button } from '../../../shared/ui/Button';
@@ -139,7 +139,7 @@ export default function ContactSection() {
                     >
                       <option value="" className="text-foreground bg-background">Select a Service</option>
                       <option value="General Inquiry" className="text-foreground bg-background">General Inquiry</option>
-                      <option value="Homeopathic OPD" className="text-foreground bg-background">Homeopathic OPD</option>
+                      <option value="Ayurvedic OPD" className="text-foreground bg-background">Ayurvedic OPD</option>
                       <option value="Constitutional Treatment" className="text-foreground bg-background">Constitutional Treatment</option>
                       <option value="Pediatric Emergency" className="text-foreground bg-background">Pediatric Emergency</option>
                       <option value="Video Consultation" className="text-foreground bg-background">Video Consultation</option>

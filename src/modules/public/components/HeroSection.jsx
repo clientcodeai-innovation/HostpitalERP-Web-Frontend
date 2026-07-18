@@ -13,28 +13,28 @@ const slides = [
     tagline: 'Natural Healing for Your Little Ones',
     heading: 'Gentle Care,',
     highlight: 'Natural Cure',
-    description: 'Homeopathic pediatric care with compassion â€” safe, gentle remedies for a healthier childhood.',
+    description: 'Ayurvedic pediatric care with compassion â€” safe, gentle remedies for a healthier childhood.',
   },
   {
     image: slide2,
-    tagline: 'Expert Homeopathic Specialists',
+    tagline: 'Expert Ayurvedic Specialists',
     heading: 'Healing Through',
     highlight: 'Nature\'s Way',
-    description: 'Our certified homeopaths provide personalized constitutional treatment for children and families.',
+    description: 'Our certified ayurvedic doctors provide personalized constitutional treatment for children and families.',
   },
   {
     image: slide3,
     tagline: '24/7 Emergency & Neonatal Care',
     heading: 'Advanced Care,',
     highlight: 'Holistic Approach',
-    description: 'Combining modern diagnostics with classical homeopathy for complete child wellness.',
+    description: 'Combining modern diagnostics with classical ayurveda for complete child wellness.',
   },
 ];
 
 const features = [
-  { icon: Leaf, label: 'Homeopathic', sublabel: 'Remedies' },
+  { icon: Leaf, label: 'Ayurvedic', sublabel: 'Remedies' },
   { icon: ShieldCheck, label: 'Child-Friendly', sublabel: 'No Side Effects' },
-  { icon: Users, label: 'Expert', sublabel: 'Homeopaths' },
+  { icon: Users, label: 'Expert', sublabel: 'Ayurvedic Doctors' },
   { icon: Siren, label: '24/7 Emergency', sublabel: 'Available' },
 ];
 

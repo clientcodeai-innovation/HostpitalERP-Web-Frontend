@@ -5,7 +5,7 @@ import { Button } from '../../../../shared/ui/Button';
 export default function BlogPage() {
   const articles = [
     { title: "Natural Ways to Boost Your Child's Immunity", category: "Pediatrics", date: "Oct 12, 2026" },
-    { title: "Understanding Constitutional Homeopathy", category: "Homeopathy", date: "Sep 28, 2026" },
+    { title: "Understanding Constitutional Ayurveda", category: "Ayurveda", date: "Sep 28, 2026" },
     { title: "Managing Seasonal Allergies Without Drowsiness", category: "Wellness", date: "Sep 15, 2026" },
     { title: "The First 1000 Days: A Guide for New Parents", category: "Infant Care", date: "Aug 02, 2026" },
   ];
@@ -22,7 +22,7 @@ export default function BlogPage() {
             Insights & Health Tips
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Stay informed with the latest articles on pediatric care, homeopathy, and natural wellness from our experts.
+            Stay informed with the latest articles on pediatric care, ayurveda, and natural wellness from our experts.
           </p>
         </div>
       </section>

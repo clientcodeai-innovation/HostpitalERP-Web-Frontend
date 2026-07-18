@@ -1,30 +1,30 @@
-﻿import { Calendar, Siren, Syringe, Video, Leaf, Stethoscope, ArrowRight } from 'lucide-react';
+import { Calendar, Siren, Syringe, Video, Leaf, Stethoscope, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '../../../shared/ui/Card';
 import { Badge } from '../../../shared/ui/Badge';
 
 const services = [
   {
     icon: Stethoscope,
-    title: 'Homeopathic OPD',
-    desc: 'Constitutional case-taking and personalized homeopathic treatment plans.',
+    title: 'Ayurvedic OPD',
+    desc: 'Constitutional case-taking and personalized ayurvedic treatment plans.',
     colorClass: 'text-emerald-600 bg-emerald-500/10',
   },
   {
     icon: Siren,
     title: 'Emergency & Acute Care',
-    desc: '24/7 priority care with integrated homeopathic first-aid remedies.',
+    desc: '24/7 priority care with integrated ayurvedic first-aid remedies.',
     colorClass: 'text-red-500 bg-red-500/10',
   },
   {
     icon: Syringe,
     title: 'Vaccination & Immunization',
-    desc: "Complete immunization tracking with homeopathic post-vaccine support.",
+    desc: "Complete immunization tracking with ayurvedic post-vaccine support.",
     colorClass: 'text-amber-600 bg-amber-500/10',
   },
   {
     icon: Video,
     title: 'Video Consultation',
-    desc: 'Remote homeopathic consultation from the comfort of your home.',
+    desc: 'Remote ayurvedic consultation from the comfort of your home.',
     colorClass: 'text-teal-500 bg-teal-500/10',
   },
   {
@@ -36,7 +36,7 @@ const services = [
   {
     icon: Calendar,
     title: 'Pediatric & Neonatal',
-    desc: 'Gentle, safe homeopathic care for newborns, infants, and children.',
+    desc: 'Gentle, safe ayurvedic care for newborns, infants, and children.',
     colorClass: 'text-sky-500 bg-sky-500/10',
   },
 ];
@@ -52,7 +52,7 @@ export default function ServicesSection() {
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight mb-4">Holistic Healthcare Services</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive homeopathic & pediatric care blending classical remedies with modern diagnostics.
+            Comprehensive ayurvedic & pediatric care blending classical remedies with modern diagnostics.
           </p>
         </div>
 
