@@ -35,7 +35,7 @@ export default function AllergiesAsthmaPage() {
             {[
               { icon: ShieldAlert, title: 'Allergy Testing', desc: 'Comprehensive panels to identify specific triggers.' },
               { icon: Wind, title: 'Nebulization Support', desc: 'In-clinic emergency nebulization and oxygen support.' },
-              { icon: CheckCircle2, title: 'Homeopathic Integration', desc: 'Reducing dependency on inhalers through constitutional medicine.' }
+              { icon: CheckCircle2, title: 'Ayurvedic Integration', desc: 'Reducing dependency on inhalers through constitutional medicine.' }
             ].map((feature, i) => (
               <div key={i} className="bg-card p-8 rounded-2xl border border-border text-center hover:border-primary/50 transition-colors">
                 <feature.icon className="w-12 h-12 text-primary mx-auto mb-6" />

@@ -3,8 +3,8 @@ import { HelpCircle } from 'lucide-react';
 
 export default function FaqsPage() {
   const faqs = [
-    { q: "What is Constitutional Homeopathy?", a: "Constitutional homeopathy considers the entire person—physical, mental, and emotional—rather than just treating isolated symptoms." },
-    { q: "Are homeopathic medicines safe for infants?", a: "Yes, homeopathic medicines are highly diluted, natural, and completely safe for infants, children, and pregnant women when prescribed by an expert." },
+    { q: "What is Constitutional Ayurveda?", a: "Constitutional ayurveda considers the entire person—physical, mental, and emotional—rather than just treating isolated symptoms." },
+    { q: "Are ayurvedic medicines safe for infants?", a: "Yes, ayurvedic medicines are highly diluted, natural, and completely safe for infants, children, and pregnant women when prescribed by an expert." },
     { q: "Do you offer online video consultations?", a: "Absolutely. We offer secure, end-to-end encrypted video consultations so you can get expert care from the comfort of your home." },
     { q: "How do I order a refill of my medicines?", a: "You can use our 'Order Medicines' page under the Resources tab or use our Patient Portal to request a refill, and we will ship it directly to you." },
   ];
@@ -21,7 +21,7 @@ export default function FaqsPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Find answers to common questions about our clinic, homeopathic treatments, and booking procedures.
+            Find answers to common questions about our clinic, ayurvedic treatments, and booking procedures.
           </p>
         </div>
       </section>

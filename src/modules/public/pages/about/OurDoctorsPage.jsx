@@ -24,7 +24,7 @@ const doctors = [
   {
     id: 3,
     name: 'Dr. Emily Davis',
-    specialty: 'Homeopathic Consultant',
+    specialty: 'Ayurvedic Doctor',
     experience: '10+ Years',
     image: 'https://images.unsplash.com/photo-1594824436998-058a23116fc7?q=80&w=1000&auto=format&fit=crop',
     rating: 5.0,

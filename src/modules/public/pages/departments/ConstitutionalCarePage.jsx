@@ -9,10 +9,10 @@ export default function ConstitutionalCarePage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
               <Leaf className="w-4 h-4" />
-              <span>Homeopathy</span>
+              <span>Ayurveda</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Constitutional Homeopathy
+              Constitutional Ayurveda
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               A holistic approach focusing on the individual's physical, emotional, and psychological makeup to build long-term immunity naturally.
@@ -21,7 +21,7 @@ export default function ConstitutionalCarePage() {
           <div className="relative">
             <img 
               src="/images/constitutional_care.png" 
-              alt="Homeopathic medicine" 
+              alt="Ayurvedic medicine" 
               className="rounded-3xl shadow-2xl object-cover h-[400px] w-full"
             />
           </div>

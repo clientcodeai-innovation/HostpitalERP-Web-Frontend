@@ -15,9 +15,9 @@ const awards = [
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop'
   },
   {
-    title: 'Excellence in Homeopathy',
+    title: 'Excellence in Ayurveda',
     year: '2021',
-    description: 'Honored for our unique integration of constitutional homeopathic care alongside modern pediatric medicine.',
+    description: 'Honored for our unique integration of constitutional ayurvedic care alongside modern pediatric medicine.',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop'
   }
 ];
