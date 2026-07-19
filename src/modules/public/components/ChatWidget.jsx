@@ -8,7 +8,7 @@ export default function ChatWidget() {
   const [history, setHistory] = useState([
     {
       type: 'bot',
-      text: "🙏 Welcome to Hari Om Ayurved Clinic\n\nHow can we assist you today?",
+      text: "🙏 Welcome to  Ayurved Clinic\n\nHow can we assist you today?",
       options: [
         { id: 'opd', label: "Book OPD Appointment", icon: Calendar },
         { id: 'emergency', label: "Emergency / Admission", icon: Activity },
@@ -81,7 +81,7 @@ export default function ChatWidget() {
       case 'contact':
         botResponse = {
           type: 'bot',
-          text: "📍 Address: Hari Om Ayurved Clinic, Main Medical Road, City.\n\n📞 Phone: +91 99999-99999\n🕒 Timings: 9:00 AM - 9:00 PM (Mon-Sat)\n\nSunday: 10:00 AM - 2:00 PM"
+          text: "📍 Address: hospital Ayurved Clinic, Main Medical Road, City.\n\n📞 Phone: +91 99999-99999\n🕒 Timings: 9:00 AM - 9:00 PM (Mon-Sat)\n\nSunday: 10:00 AM - 2:00 PM"
         };
         break;
       case 'dept_pedia':
@@ -124,7 +124,7 @@ export default function ChatWidget() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-bold">Hari Om Assistant</h3>
+                <h3 className="font-bold">hospital Assistant</h3>
                 <p className="text-xs text-primary-100">Online | AI Chatbot</p>
               </div>
             </div>

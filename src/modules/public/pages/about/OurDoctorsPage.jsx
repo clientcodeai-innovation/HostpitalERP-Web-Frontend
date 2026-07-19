@@ -26,7 +26,7 @@ const doctors = [
     name: 'Dr. Emily Davis',
     specialty: 'Ayurvedic Doctor',
     experience: '10+ Years',
-    image: 'https://images.unsplash.com/photo-1594824436998-058a23116fc7?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://static.vecteezy.com/system/resources/previews/028/287/384/non_2x/a-mature-indian-male-doctor-on-a-white-background-ai-generated-photo.jpg',
     rating: 5.0,
     reviews: 210
   },

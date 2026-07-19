@@ -14,7 +14,7 @@ export default function Footer() {
                 <Leaf className="w-6 h-6" />
               </div>
               <div>
-                <span className="font-bold text-xl tracking-tight text-foreground block leading-none">Hari Om</span>
+                <span className="font-bold text-xl tracking-tight text-foreground block leading-none">hospital</span>
                 <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">Ayurved Clinic</span>
               </div>
             </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-muted-foreground text-sm">contact@hariomclinic.com</span>
+                <span className="text-muted-foreground text-sm">contact@hospitalclinic.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -106,7 +106,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            &copy; {new Date().getFullYear()} Hari Om Ayurved Clinic. All rights reserved.
+            &copy; {new Date().getFullYear()} hospital Ayurved Clinic. All rights reserved.
           </p>
           <div className="flex items-center gap-1 text-sm text-muted-foreground bg-primary/5 px-4 py-2 rounded-full border border-primary/10">
             Made with <Heart className="w-4 h-4 text-red-500 fill-red-500 mx-1" /> by <span className="font-semibold text-foreground ml-1">ClientCode AI</span>

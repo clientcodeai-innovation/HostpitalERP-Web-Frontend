@@ -89,7 +89,7 @@ export function Sidebar({ collapsed }) {
             H
           </div>
           {!collapsed && (
-            <span className="font-semibold text-sm whitespace-nowrap text-foreground">Hari Om ERP</span>
+            <span className="font-semibold text-sm whitespace-nowrap text-foreground">hospital ERP</span>
           )}
         </div>
 

@@ -71,7 +71,7 @@ export default function ContactSection() {
                 <h3 className="text-lg font-bold text-foreground mb-1">Phone & Email</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   +91 97714 00390 <br />
-                  info@hariomhospital.com
+                  info@hospitalhospital.com
                 </p>
               </CardContent>
             </Card>

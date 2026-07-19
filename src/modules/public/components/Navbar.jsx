@@ -143,7 +143,7 @@ export default function Navbar() {
               <Leaf className="w-6 h-6 text-primary" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold leading-none text-foreground">Hari Om</span>
+              <span className="text-xl font-bold leading-none text-foreground">hospital</span>
               <span className="text-xs font-semibold text-primary tracking-wider uppercase">Ayurved Clinic</span>
             </div>
           </a>

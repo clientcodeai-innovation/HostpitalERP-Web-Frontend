@@ -6,11 +6,11 @@ import { Button } from '../../../shared/ui/Button';
 import { Plus, UserCog, Shield, Edit, Trash2, Check, X as XIcon } from 'lucide-react';
 
 const users = [
-  { id: 1, name: 'Dr. Vijay Kumar', email: 'vijay@hariom.com', role: 'Doctor', status: 'Active', lastLogin: '14 Jul, 09:00 AM' },
-  { id: 2, name: 'Dr. Sweta', email: 'sweta@hariom.com', role: 'Doctor', status: 'Active', lastLogin: '14 Jul, 08:45 AM' },
-  { id: 3, name: 'Receptionist 1', email: 'reception@hariom.com', role: 'Staff', status: 'Active', lastLogin: '14 Jul, 09:30 AM' },
-  { id: 4, name: 'Admin User', email: 'admin@hariom.com', role: 'Super Admin', status: 'Active', lastLogin: '14 Jul, 07:00 AM' },
-  { id: 5, name: 'Pharmacy Staff', email: 'pharmacy@hariom.com', role: 'Pharmacist', status: 'Inactive', lastLogin: '10 Jul, 03:00 PM' },
+  { id: 1, name: 'Dr. Vijay Kumar', email: 'vijay@hospital.com', role: 'Doctor', status: 'Active', lastLogin: '14 Jul, 09:00 AM' },
+  { id: 2, name: 'Dr. Sweta', email: 'sweta@hospital.com', role: 'Doctor', status: 'Active', lastLogin: '14 Jul, 08:45 AM' },
+  { id: 3, name: 'Receptionist 1', email: 'reception@hospital.com', role: 'Staff', status: 'Active', lastLogin: '14 Jul, 09:30 AM' },
+  { id: 4, name: 'Admin User', email: 'admin@hospital.com', role: 'Super Admin', status: 'Active', lastLogin: '14 Jul, 07:00 AM' },
+  { id: 5, name: 'Pharmacy Staff', email: 'pharmacy@hospital.com', role: 'Pharmacist', status: 'Inactive', lastLogin: '10 Jul, 03:00 PM' },
 ];
 
 const permissions = [
