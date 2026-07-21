@@ -25,7 +25,7 @@ export default function AboutHospitalPage() {
             Caring for Your <span className="text-primary">Child's Future</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Bachpan Hospital is a premier pediatric care center dedicated to providing comprehensive and compassionate healthcare for children of all ages.
+            Hospital Ayurved Clinic is a premier pediatric care center dedicated to providing comprehensive and compassionate healthcare for children of all ages.
           </p>
         </div>
       </section>

@@ -40,7 +40,7 @@ export default function AboutSection() {
           <div className="space-y-8 animate-in fade-in slide-in-from-right-8 duration-700">
             <div>
               <Badge variant="outline" className="mb-4">
-                About Bachpan Hospital
+                About Hospital Ayurved Clinic
               </Badge>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight tracking-tight">
                 Natural, Gentle Care For Your Children
@@ -48,7 +48,7 @@ export default function AboutSection() {
             </div>
             
             <p className="text-muted-foreground text-lg leading-relaxed">
-              At Bachpan Hospital, we believe in healing from within. Our team of expert ayurvedic doctors provides personalized constitutional treatment tailored to the unique needs of infants, children, and adolescents, ensuring a healthy foundation without harsh side effects.
+              At Hospital Ayurved Clinic, we believe in healing from within. Our team of expert ayurvedic doctors provides personalized constitutional treatment tailored to the unique needs of infants, children, and adolescents, ensuring a healthy foundation without harsh side effects.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">

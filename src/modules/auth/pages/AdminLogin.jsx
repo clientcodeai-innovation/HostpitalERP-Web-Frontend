@@ -1,6 +1,6 @@
 
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, User, Shield, Stethoscope, ClipboardList, Pill, Phone } from 'lucide-react';
+import { ArrowLeft, User, Shield, Stethoscope, ClipboardList, Pill, Phone, Package } from 'lucide-react';
 import { useAuth, ROLES } from '../../../app/AuthContext';
 import { Button } from '../../../shared/ui/Button';
 
@@ -66,6 +66,15 @@ export default function AdminLogin() {
             <Pill className="w-5 h-5 mr-3 text-orange-500" />
             <span className="font-semibold">Login as Pharmacist</span>
           </Button>
+
+          <Button 
+            variant="outline" 
+            className="w-full justify-start text-left h-12 text-gray-700" 
+            onClick={() => handleMockLogin(ROLES.INVENTORY_MANAGER)}
+          >
+            <Package className="w-5 h-5 mr-3 text-amber-600" />
+            <span className="font-semibold">Login as Inventory Manager</span>
+          </Button>
           
           <Button 
             variant="outline" 
@@ -73,7 +82,7 @@ export default function AdminLogin() {
             onClick={() => handleMockLogin(ROLES.PATIENT)}
           >
             <User className="w-5 h-5 mr-3 text-gray-500" />
-            <span className="font-semibold">Login as Patient (Portal)</span>
+            <span className="font-semibold">Login as Patient</span>
           </Button>
         </div>
 

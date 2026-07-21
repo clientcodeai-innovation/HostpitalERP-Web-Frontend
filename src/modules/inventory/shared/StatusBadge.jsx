@@ -17,6 +17,7 @@ const statusVariants = {
   // Stock levels
   'in stock': 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400',
   'low stock': 'bg-amber-500/10 border-amber-500/20 text-amber-600 dark:text-amber-400',
+  'very low stock': 'bg-rose-500/10 border-rose-500/20 text-rose-600 dark:text-rose-400',
   'out of stock': 'bg-rose-500/10 border-rose-500/20 text-rose-600 dark:text-rose-400',
   'expiring soon': 'bg-amber-500/10 border-amber-500/20 text-amber-600 dark:text-amber-400',
   'expired': 'bg-rose-500/10 border-rose-500/20 text-rose-600 dark:text-rose-400',

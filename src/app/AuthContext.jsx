@@ -18,6 +18,7 @@ export const ROLES = {
   DOCTOR: 'doctor',
   RECEPTIONIST: 'receptionist',
   PHARMACIST: 'pharmacist',
+  INVENTORY_MANAGER: 'inventory_manager',
   PATIENT: 'patient'
 };
 

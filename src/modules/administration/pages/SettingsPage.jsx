@@ -42,7 +42,7 @@ export default function SettingsPage() {
             <CardContent className="space-y-6">
               {activeTab === 'General' && (
                 <>
-                  <div className="space-y-2"><label className="text-sm font-medium">Application Name</label><Input defaultValue="Bachpan Hospital ERP" /></div>
+                  <div className="space-y-2"><label className="text-sm font-medium">Application Name</label><Input defaultValue="Hospital Ayurved Clinic ERP" /></div>
                   <div className="space-y-2"><label className="text-sm font-medium">Timezone</label><Input defaultValue="Asia/Kolkata (UTC+5:30)" /></div>
                   <div className="space-y-2"><label className="text-sm font-medium">Currency</label><Input defaultValue="INR (₹)" /></div>
                   <div className="space-y-2"><label className="text-sm font-medium">Date Format</label><Input defaultValue="DD MMM YYYY" /></div>

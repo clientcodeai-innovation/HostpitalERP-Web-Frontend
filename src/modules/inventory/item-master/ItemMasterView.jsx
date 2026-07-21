@@ -264,11 +264,11 @@ export default function ItemMasterView() {
       key: 'batchTracking',
       label: 'Tracking',
       sortable: false,
-      width: '10%',
+      width: '12%',
       render: (_, row) => (
         <span className="text-[10px] font-bold text-muted-foreground flex flex-col gap-0.5">
-          <span>Batch: {row.batchTracking ? 'Yes' : 'No'}</span>
-          <span>Expiry: {row.expiryTracking ? 'Yes' : 'No'}</span>
+          <span>Batch: <span className="font-mono text-primary/80">{row.batchTracking ? (row.batchNumber || 'Yes') : 'No'}</span></span>
+          <span>Expiry: <span className="text-primary/80">{row.expiryTracking ? (row.expiryDate || 'Yes') : 'No'}</span></span>
         </span>
       )
     }

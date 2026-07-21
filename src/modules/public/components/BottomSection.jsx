@@ -62,7 +62,7 @@ export default function BottomSection() {
           {/* Why Choose Us */}
           <Card className="bg-muted/30 relative overflow-hidden border-border/50">
             <CardHeader>
-              <CardTitle>Why Choose Bachpan Hospital?</CardTitle>
+              <CardTitle>Why Choose Hospital Ayurved Clinic?</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4 relative z-10">

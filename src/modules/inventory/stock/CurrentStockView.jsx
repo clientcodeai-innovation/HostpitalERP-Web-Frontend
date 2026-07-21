@@ -28,6 +28,8 @@ export default function CurrentStockView({ onNavigateToPr }) {
       let status = 'In Stock';
       if (totalQty === 0) {
         status = 'Out of Stock';
+      } else if (totalQty <= item.reorderLevel / 2) {
+        status = 'Very Low Stock';
       } else if (totalQty <= item.reorderLevel) {
         status = 'Low Stock';
       }
@@ -78,7 +80,22 @@ export default function CurrentStockView({ onNavigateToPr }) {
         return cat ? cat.name : val;
       }
     },
-    { key: 'totalQty', label: 'Current Quantity', sortable: true, width: '15%', align: 'right', render: (val) => <span className="font-mono font-bold">{val}</span> },
+    { 
+      key: 'totalQty', 
+      label: 'Current Quantity', 
+      sortable: true, 
+      width: '15%', 
+      align: 'right', 
+      render: (val, row) => {
+        let colorClass = 'text-emerald-600 dark:text-emerald-500';
+        if (val === 0 || val <= (row.reorderLevel / 2)) {
+          colorClass = 'text-rose-600 dark:text-rose-500';
+        } else if (val <= row.reorderLevel) {
+          colorClass = 'text-amber-600 dark:text-amber-500';
+        }
+        return <span className={`font-mono font-bold ${colorClass}`}>{val}</span>;
+      }
+    },
     { key: 'reorderLevel', label: 'Reorder Level', sortable: true, width: '12%', align: 'right', render: (val) => <span className="font-mono text-muted-foreground">{val}</span> },
     {
       key: 'status',

@@ -7,7 +7,7 @@ const testimonials = [
     name: "Priya Sharma",
     relation: "Mother of 3-year-old",
     rating: 5,
-    text: "The care my son received at Bachpan Hospital was exceptional. Dr. Sarah was so patient and explained everything clearly. The pediatric ward doesn't feel like a hospital at all!",
+    text: "The care my son received at Hospital Ayurved Clinic was exceptional. Dr. Sarah was so patient and explained everything clearly. The pediatric ward doesn't feel like a hospital at all!",
     date: "2 weeks ago"
   },
   {

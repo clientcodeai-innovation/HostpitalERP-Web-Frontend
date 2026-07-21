@@ -19,7 +19,7 @@ export default function IVRPage() {
 
       {/* IVR Menu Preview */}
       <Card>
-        <CardHeader><CardTitle className="text-base">IVR Menu — Bachpan Hospital</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base">IVR Menu — Hospital Ayurved Clinic</CardTitle></CardHeader>
         <CardContent>
           <div className="space-y-2 text-sm">
             {[

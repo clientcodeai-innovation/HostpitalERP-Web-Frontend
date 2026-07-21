@@ -35,8 +35,8 @@ const navGroups = [
   {
     label: 'Inventory',
     items: [
-      { name: 'Medicine Stock', icon: Package, path: '/admin/inventory', allowedRoles: [ROLES.SUPER_ADMIN, ROLES.CLINIC_ADMIN, ROLES.PHARMACIST] },
-      { name: 'Delivery & Orders', icon: Truck, path: '/admin/delivery', allowedRoles: [ROLES.SUPER_ADMIN, ROLES.CLINIC_ADMIN, ROLES.PHARMACIST] },
+      { name: 'Medicine Stock', icon: Package, path: '/admin/inventory', allowedRoles: [ROLES.SUPER_ADMIN, ROLES.CLINIC_ADMIN, ROLES.PHARMACIST, ROLES.INVENTORY_MANAGER] },
+      { name: 'Delivery & Orders', icon: Truck, path: '/admin/delivery', allowedRoles: [ROLES.SUPER_ADMIN, ROLES.CLINIC_ADMIN, ROLES.PHARMACIST, ROLES.INVENTORY_MANAGER] },
     ]
   },
   {
@@ -102,7 +102,7 @@ export function Sidebar({ collapsed, toggleSidebar }) {
   })).filter(group => group.items.length > 0);
 
   const getRoleDisplayName = (role) => {
-    if (!role) return 'Bachpan Hospital ERP';
+    if (!role) return 'Hospital Ayurved Clinic ERP';
     return role.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') + ' Dashboard';
   };
 
@@ -201,7 +201,7 @@ export function Sidebar({ collapsed, toggleSidebar }) {
             </div>
             <div className="w-full mt-4 pt-4 border-t border-border text-center">
               <span className="text-xs text-muted-foreground">Workspace | </span>
-              <span className="text-xs font-semibold text-foreground">Bachpan Hospital</span>
+              <span className="text-xs font-semibold text-foreground">Hospital Ayurved Clinic</span>
             </div>
           </div>
         )}

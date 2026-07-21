@@ -75,6 +75,8 @@ const INITIAL_ITEMS = [
     reorderLevel: 100,
     batchTracking: true,
     expiryTracking: true,
+    batchNumber: 'BN-AUG-01',
+    expiryDate: '2027-10-31',
     image: null
   },
   {
@@ -100,6 +102,8 @@ const INITIAL_ITEMS = [
     reorderLevel: 40,
     batchTracking: true,
     expiryTracking: true,
+    batchNumber: 'BN-ARN-100',
+    expiryDate: '2028-05-20',
     image: null
   },
   {
@@ -125,6 +129,8 @@ const INITIAL_ITEMS = [
     reorderLevel: 25,
     batchTracking: false,
     expiryTracking: true,
+    batchNumber: '-',
+    expiryDate: '2029-01-01',
     image: null
   }
 ];

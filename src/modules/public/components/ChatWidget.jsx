@@ -8,7 +8,7 @@ export default function ChatWidget() {
   const [history, setHistory] = useState([
     {
       type: 'bot',
-      text: "🙏 Welcome to Bachpan Hospital\n\nHow can we assist you today?",
+      text: "🙏 Welcome to Hospital Ayurved Clinic\n\nHow can we assist you today?",
       options: [
         { id: 'opd', label: "Book OPD Appointment", icon: Calendar },
         { id: 'emergency', label: "Emergency / Admission", icon: Activity },
@@ -81,7 +81,7 @@ export default function ChatWidget() {
       case 'contact':
         botResponse = {
           type: 'bot',
-          text: "📍 Address: Bachpan Hospital, Main Medical Road, City.\n\n📞 Phone: +91 99999-99999\n🕒 Timings: 9:00 AM - 9:00 PM (Mon-Sat)\n\nSunday: 10:00 AM - 2:00 PM"
+          text: "📍 Address: Hospital Ayurved Clinic, Main Medical Road, City.\n\n📞 Phone: +91 99999-99999\n🕒 Timings: 9:00 AM - 9:00 PM (Mon-Sat)\n\nSunday: 10:00 AM - 2:00 PM"
         };
         break;
       case 'dept_pedia':
