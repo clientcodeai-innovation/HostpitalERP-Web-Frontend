@@ -5,10 +5,10 @@ import { Badge } from '../../../shared/ui/Badge';
 import { Phone, PhoneIncoming, PhoneOutgoing, Hash } from 'lucide-react';
 
 const calls = [
-  { id: 'IVR-201', caller: '+91 98765 43210', patient: 'Aarav Sharma', duration: '2:34', keypress: '1 â†’ 2', action: 'Book Appointment', status: 'Completed', time: '14 Jul, 09:10 AM' },
-  { id: 'IVR-200', caller: '+91 87654 32109', patient: 'Unknown', duration: '0:45', keypress: '1 â†’ 3', action: 'Speak to Doctor', status: 'Transferred', time: '13 Jul, 03:45 PM' },
+  { id: 'IVR-201', caller: '+91 98765 43210', patient: 'Aarav Sharma', duration: '2:34', keypress: '1 → 2', action: 'Book Appointment', status: 'Completed', time: '14 Jul, 09:10 AM' },
+  { id: 'IVR-200', caller: '+91 87654 32109', patient: 'Unknown', duration: '0:45', keypress: '1 → 3', action: 'Speak to Doctor', status: 'Transferred', time: '13 Jul, 03:45 PM' },
   { id: 'IVR-199', caller: '+91 76543 21098', patient: 'Kabir Singh', duration: '1:12', keypress: '2', action: 'Clinic Hours', status: 'Completed', time: '13 Jul, 11:00 AM' },
-  { id: 'IVR-198', caller: '+91 55555 12345', patient: 'Unknown', duration: '0:08', keypress: 'â€”', action: 'Abandoned', status: 'Missed', time: '12 Jul, 06:30 PM' },
+  { id: 'IVR-198', caller: '+91 55555 12345', patient: 'Unknown', duration: '0:08', keypress: '-', action: 'Abandoned', status: 'Missed', time: '12 Jul, 06:30 PM' },
 ];
 const statusColors = { Completed: 'default', Transferred: 'secondary', Missed: 'destructive' };
 
@@ -19,11 +19,11 @@ export default function IVRPage() {
 
       {/* IVR Menu Preview */}
       <Card>
-        <CardHeader><CardTitle className="text-base">IVR Menu â€” Hari Om Ayurved Clinic</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base">IVR Menu — Bachpan Hospital</CardTitle></CardHeader>
         <CardContent>
           <div className="space-y-2 text-sm">
             {[
-              { key: '1', label: 'Book Appointment', sub: 'â†’ Press 1 for OPD, 2 for Emergency, 3 for Doctor' },
+              { key: '1', label: 'Book Appointment', sub: '→ Press 1 for OPD, 2 for Emergency, 3 for Doctor' },
               { key: '2', label: 'Clinic Hours & Location' },
               { key: '3', label: 'Speak to Receptionist' },
               { key: '0', label: 'Repeat Menu' },

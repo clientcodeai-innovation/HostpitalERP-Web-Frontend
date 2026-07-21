@@ -1,16 +1,16 @@
-﻿import React from 'react';
+import React from 'react';
 import { PageHeader } from '../../../shared/layout/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../shared/ui/Card';
 import { Badge } from '../../../shared/ui/Badge';
 import { Button } from '../../../shared/ui/Button';
-import { Plus, Download, DollarSign, CreditCard, AlertCircle, IndianRupee } from 'lucide-react';
+import { Plus, Download, CreditCard, AlertCircle, IndianRupee } from 'lucide-react';
 
 const invoices = [
-  { id: 'INV-2001', patient: 'Aarav Sharma', amount: 'â‚¹2,500', paid: 'â‚¹2,500', due: 'â‚¹0', date: '14 Jul 2026', status: 'Paid' },
-  { id: 'INV-2000', patient: 'Diya Patel', amount: 'â‚¹1,800', paid: 'â‚¹1,000', due: 'â‚¹800', date: '13 Jul 2026', status: 'Partial' },
-  { id: 'INV-1999', patient: 'Kabir Singh', amount: 'â‚¹3,200', paid: 'â‚¹0', due: 'â‚¹3,200', date: '12 Jul 2026', status: 'Unpaid' },
-  { id: 'INV-1998', patient: 'Ananya Gupta', amount: 'â‚¹950', paid: 'â‚¹950', due: 'â‚¹0', date: '10 Jul 2026', status: 'Paid' },
-  { id: 'INV-1997', patient: 'Rohan Verma', amount: 'â‚¹1,500', paid: 'â‚¹1,500', due: 'â‚¹0', date: '08 Jul 2026', status: 'Refunded' },
+  { id: 'INV-2001', patient: 'Aarav Sharma', amount: '₹ 2,500/-', paid: '₹ 2,500/-', due: '₹ 0/-', date: '14 Jul 2026', status: 'Paid' },
+  { id: 'INV-2000', patient: 'Diya Patel', amount: '₹ 1,800/-', paid: '₹ 1,000/-', due: '₹ 800/-', date: '13 Jul 2026', status: 'Partial' },
+  { id: 'INV-1999', patient: 'Kabir Singh', amount: '₹ 3,200/-', paid: '₹ 0/-', due: '₹ 3,200/-', date: '12 Jul 2026', status: 'Unpaid' },
+  { id: 'INV-1998', patient: 'Ananya Gupta', amount: '₹ 950/-', paid: '₹ 950/-', due: '₹ 0/-', date: '10 Jul 2026', status: 'Paid' },
+  { id: 'INV-1997', patient: 'Rohan Verma', amount: '₹ 1,500/-', paid: '₹ 1,500/-', due: '₹ 0/-', date: '08 Jul 2026', status: 'Refunded' },
 ];
 
 const statusColors = { Paid: 'default', Partial: 'secondary', Unpaid: 'destructive', Refunded: 'outline' };
@@ -31,10 +31,10 @@ export default function BillingPage() {
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: 'Total Revenue', value: 'â‚¹4,85,000', icon: IndianRupee, sub: 'This month', color: 'text-green-500' },
-          { label: 'Outstanding Dues', value: 'â‚¹12,400', icon: AlertCircle, sub: '8 invoices', color: 'text-destructive' },
-          { label: 'Payments Today', value: 'â‚¹8,200', icon: CreditCard, sub: '5 transactions', color: 'text-primary' },
-          { label: 'Avg Invoice', value: 'â‚¹1,850', icon: DollarSign, sub: 'Per patient', color: 'text-muted-foreground' },
+          { label: 'Total Revenue', value: '₹ 4,85,000/-', icon: IndianRupee, sub: 'This month', color: 'text-green-500' },
+          { label: 'Outstanding Dues', value: '₹ 12,400/-', icon: AlertCircle, sub: '8 invoices', color: 'text-destructive' },
+          { label: 'Payments Today', value: '₹ 8,200/-', icon: CreditCard, sub: '5 transactions', color: 'text-primary' },
+          { label: 'Avg Invoice', value: '₹ 1,850/-', icon: IndianRupee, sub: 'Per patient', color: 'text-muted-foreground' },
         ].map((k, i) => (
           <Card key={i}>
             <CardContent className="p-4">

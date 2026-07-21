@@ -7,7 +7,7 @@ import { Plus, Truck, Package, MapPin } from 'lucide-react';
 
 const orders = [
   { id: 'ORD-301', patient: 'Aarav Sharma', items: 3, date: '14 Jul 2026', awb: 'AWB12345678', carrier: 'BlueDart', status: 'Shipped' },
-  { id: 'ORD-300', patient: 'Diya Patel', items: 2, date: '13 Jul 2026', awb: 'â€”', carrier: 'â€”', status: 'Packaging' },
+  { id: 'ORD-300', patient: 'Diya Patel', items: 2, date: '13 Jul 2026', awb: '-', carrier: '-', status: 'Packaging' },
   { id: 'ORD-299', patient: 'Kabir Singh', items: 1, date: '12 Jul 2026', awb: 'AWB98765432', carrier: 'DTDC', status: 'Delivered' },
   { id: 'ORD-298', patient: 'Rohan Verma', items: 4, date: '10 Jul 2026', awb: 'AWB55566677', carrier: 'BlueDart', status: 'Delivered' },
 ];

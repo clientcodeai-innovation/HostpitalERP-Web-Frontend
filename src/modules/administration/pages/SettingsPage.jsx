@@ -42,9 +42,9 @@ export default function SettingsPage() {
             <CardContent className="space-y-6">
               {activeTab === 'General' && (
                 <>
-                  <div className="space-y-2"><label className="text-sm font-medium">Application Name</label><Input defaultValue="Hari Om Ayurved Clinic ERP" /></div>
+                  <div className="space-y-2"><label className="text-sm font-medium">Application Name</label><Input defaultValue="Bachpan Hospital ERP" /></div>
                   <div className="space-y-2"><label className="text-sm font-medium">Timezone</label><Input defaultValue="Asia/Kolkata (UTC+5:30)" /></div>
-                  <div className="space-y-2"><label className="text-sm font-medium">Currency</label><Input defaultValue="INR (â‚¹)" /></div>
+                  <div className="space-y-2"><label className="text-sm font-medium">Currency</label><Input defaultValue="INR (₹)" /></div>
                   <div className="space-y-2"><label className="text-sm font-medium">Date Format</label><Input defaultValue="DD MMM YYYY" /></div>
                 </>
               )}
@@ -68,7 +68,7 @@ export default function SettingsPage() {
                 <>
                   <div className="space-y-2"><label className="text-sm font-medium">SMTP Host</label><Input defaultValue="smtp.gmail.com" /></div>
                   <div className="grid grid-cols-2 gap-4"><div className="space-y-2"><label className="text-sm font-medium">Port</label><Input defaultValue="587" /></div><div className="space-y-2"><label className="text-sm font-medium">Encryption</label><Input defaultValue="TLS" /></div></div>
-                  <div className="space-y-2"><label className="text-sm font-medium">From Email</label><Input defaultValue="noreply@hariomhospital.com" /></div>
+                  <div className="space-y-2"><label className="text-sm font-medium">From Email</label><Input defaultValue="noreply@bachpanhospital.com" /></div>
                 </>
               )}
               {activeTab === 'Appearance' && (
@@ -87,7 +87,7 @@ export default function SettingsPage() {
               {activeTab === 'Database' && (
                 <>
                   <div className="space-y-2"><label className="text-sm font-medium">Database</label><Input defaultValue="MySQL 8.0" disabled /></div>
-                  <div className="space-y-2"><label className="text-sm font-medium">Connection</label><Input defaultValue="mysql://db.hariom.cloud:3306/erp_prod" disabled className="font-mono text-xs" /></div>
+                  <div className="space-y-2"><label className="text-sm font-medium">Connection</label><Input defaultValue="mysql://db.bachpan.cloud:3306/erp_prod" disabled className="font-mono text-xs" /></div>
                   <div className="space-y-2"><label className="text-sm font-medium">Last Backup</label><Input defaultValue="14 Jul 2026, 02:00 AM" disabled /></div>
                 </>
               )}

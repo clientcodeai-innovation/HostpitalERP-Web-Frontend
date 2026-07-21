@@ -30,7 +30,7 @@ import AllergiesAsthmaPage from '../modules/public/pages/departments/AllergiesAs
 import AcuteFeversPage from '../modules/public/pages/departments/AcuteFeversPage';
 
 import AdminLogin from '../modules/auth/pages/AdminLogin';
-import AdminDashboard from '../modules/administration/pages/AdminDashboard';
+import DashboardRouter from '../modules/administration/pages/DashboardRouter';
 import { ThemeProvider } from '../shared/theme/ThemeProvider';
 import { AppLayout } from '../shared/layout/AppLayout';
 import { ProtectedRoute } from './ProtectedRoute';
@@ -49,17 +49,36 @@ import BillingPage from '../modules/finance/pages/BillingPage';
 import InventoryPage from '../modules/inventory/pages/InventoryPage';
 import DeliveryPage from '../modules/inventory/pages/DeliveryPage';
 import WalletPage from '../modules/finance/pages/WalletPage';
+import ReferralsPage from '../modules/finance/pages/ReferralsPage';
 import WhatsAppPage from '../modules/communication/pages/WhatsAppPage';
 import IVRPage from '../modules/communication/pages/IVRPage';
 import NotificationsPage from '../modules/communication/pages/NotificationsPage';
 import PublicWebsitePage from '../modules/platform/pages/PublicWebsitePage';
 import PortalsPage from '../modules/platform/pages/PortalsPage';
-import AIWorkbenchPage from '../modules/platform/pages/AIWorkbenchPage';
+import AdminMessagePage from '../modules/communication/pages/AdminMessagePage';
 import ReportsPage from '../modules/platform/pages/ReportsPage';
 import UsersRolesPage from '../modules/administration/pages/UsersRolesPage';
 import ClinicSettingsPage from '../modules/administration/pages/ClinicSettingsPage';
 import SettingsPage from '../modules/administration/pages/SettingsPage';
 import MarketingPage from '../modules/platform/pages/MarketingPage';
+
+// Admin dummy pages (to prevent undefined errors)
+import BloodBankPage from '../modules/patient-care/pages/BloodBankPage';
+import AdmitHistoryPage from '../modules/patient-care/pages/AdmitHistoryPage';
+import OperationHistoryPage from '../modules/patient-care/pages/OperationHistoryPage';
+
+// Patient Portal Pages
+import PatientDashboard from '../modules/patient-care/pages/PatientDashboard';
+import PatientAppointmentsPage from '../modules/patient-care/pages/PatientAppointmentsPage';
+import PatientConsultationsPage from '../modules/patient-care/pages/PatientConsultationsPage';
+import PatientPrescriptionsPage from '../modules/patient-care/pages/PatientPrescriptionsPage';
+import PatientDoctorsPage from '../modules/patient-care/pages/PatientDoctorsPage';
+import PatientBloodBankPage from '../modules/patient-care/pages/PatientBloodBankPage';
+import PatientAdmitHistoryPage from '../modules/patient-care/pages/PatientAdmitHistoryPage';
+import PatientInvoicePage from '../modules/patient-care/pages/PatientInvoicePage';
+import PatientMessagePage from '../modules/patient-care/pages/PatientMessagePage';
+import PatientProfilePage from '../modules/patient-care/pages/PatientProfilePage';
+import PatientSettingsPage from '../modules/patient-care/pages/PatientSettingsPage';
 
 export default function App() {
   return (
@@ -103,17 +122,23 @@ export default function App() {
           <Route path="/admin" element={<ProtectedRoute />}>
             <Route element={<AppLayout />}>
               <Route index element={<Navigate to="/admin/dashboard" replace />} />
-              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="dashboard" element={<DashboardRouter />} />
               
-              {/* Patient Care */}
+            {/* Patient Care */}
             <Route path="patients" element={<PatientsPage />} />
             <Route path="appointments" element={<AppointmentsPage />} />
             <Route path="consultations" element={<ConsultationsPage />} />
             <Route path="prescriptions" element={<PrescriptionsPage />} />
+            <Route path="doctors" element={<PatientDoctorsPage />} />
+            <Route path="blood-bank" element={<BloodBankPage />} />
+            <Route path="admit-history" element={<AdmitHistoryPage />} />
+            <Route path="operation-history" element={<OperationHistoryPage />} />
             
             {/* Finance */}
             <Route path="billing" element={<BillingPage />} />
             <Route path="wallet" element={<WalletPage />} />
+            <Route path="referrals" element={<ReferralsPage />} />
+            <Route path="patient-invoice" element={<PatientInvoicePage />} />
             
             {/* Inventory */}
             <Route path="inventory" element={<InventoryPage />} />
@@ -123,18 +148,38 @@ export default function App() {
             <Route path="whatsapp" element={<WhatsAppPage />} />
             <Route path="ivr" element={<IVRPage />} />
             <Route path="notifications" element={<NotificationsPage />} />
+            <Route path="patient-message" element={<PatientMessagePage />} />
             
-            {/* Platform */}
+            {/* Platform / Messages */}
             <Route path="public-website" element={<PublicWebsitePage />} />
             <Route path="portals" element={<PortalsPage />} />
-            <Route path="ai-workbench" element={<AIWorkbenchPage />} />
+            <Route path="messages" element={<AdminMessagePage />} />
             <Route path="reports" element={<ReportsPage />} />
             <Route path="marketing" element={<MarketingPage />} />
             
             {/* Administration */}
+            {/* Administration */}
             <Route path="users-roles" element={<UsersRolesPage />} />
             <Route path="clinic-settings" element={<ClinicSettingsPage />} />
             <Route path="settings" element={<SettingsPage />} />
+            </Route>
+          </Route>
+
+          {/* Patient Routes wrapped in AppLayout and ProtectedRoute */}
+          <Route path="/patient" element={<ProtectedRoute />}>
+            <Route element={<AppLayout />}>
+              <Route index element={<Navigate to="/patient/dashboard" replace />} />
+              <Route path="dashboard" element={<PatientDashboard />} />
+              <Route path="appointments" element={<PatientAppointmentsPage />} />
+              <Route path="consultations" element={<PatientConsultationsPage />} />
+              <Route path="prescriptions" element={<PatientPrescriptionsPage />} />
+              <Route path="doctors" element={<PatientDoctorsPage />} />
+              <Route path="blood-bank" element={<PatientBloodBankPage />} />
+              <Route path="admit-history" element={<PatientAdmitHistoryPage />} />
+              <Route path="invoice" element={<PatientInvoicePage />} />
+              <Route path="message" element={<PatientMessagePage />} />
+              <Route path="profile" element={<PatientProfilePage />} />
+              <Route path="settings" element={<PatientSettingsPage />} />
             </Route>
           </Route>
         </Routes>

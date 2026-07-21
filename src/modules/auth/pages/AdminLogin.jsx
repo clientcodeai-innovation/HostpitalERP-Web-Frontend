@@ -1,11 +1,10 @@
-import { useState } from 'react';
+
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, User, Shield, Stethoscope, ClipboardList, Pill } from 'lucide-react';
+import { ArrowLeft, User, Shield, Stethoscope, ClipboardList, Pill, Phone } from 'lucide-react';
 import { useAuth, ROLES } from '../../../app/AuthContext';
 import { Button } from '../../../shared/ui/Button';
 
 export default function AdminLogin() {
-  const [error, setError] = useState('');
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -25,7 +24,7 @@ export default function AdminLogin() {
         <div className="space-y-3">
           <Button 
             variant="outline" 
-            className="w-full justify-start text-left h-12" 
+            className="w-full justify-start text-left h-12 text-gray-700" 
             onClick={() => handleMockLogin(ROLES.SUPER_ADMIN)}
           >
             <Shield className="w-5 h-5 mr-3 text-red-500" />
@@ -34,7 +33,7 @@ export default function AdminLogin() {
 
           <Button 
             variant="outline" 
-            className="w-full justify-start text-left h-12" 
+            className="w-full justify-start text-left h-12 text-gray-700" 
             onClick={() => handleMockLogin(ROLES.CLINIC_ADMIN)}
           >
             <Shield className="w-5 h-5 mr-3 text-blue-500" />
@@ -43,7 +42,7 @@ export default function AdminLogin() {
 
           <Button 
             variant="outline" 
-            className="w-full justify-start text-left h-12" 
+            className="w-full justify-start text-left h-12 text-gray-700" 
             onClick={() => handleMockLogin(ROLES.DOCTOR)}
           >
             <Stethoscope className="w-5 h-5 mr-3 text-emerald-500" />
@@ -52,16 +51,16 @@ export default function AdminLogin() {
 
           <Button 
             variant="outline" 
-            className="w-full justify-start text-left h-12" 
-            onClick={() => handleMockLogin(ROLES.FRONT_DESK)}
+            className="w-full justify-start text-left h-12 text-gray-700" 
+            onClick={() => handleMockLogin(ROLES.RECEPTIONIST)}
           >
-            <ClipboardList className="w-5 h-5 mr-3 text-purple-500" />
-            <span className="font-semibold">Login as Front Desk</span>
+            <Phone className="w-5 h-5 mr-3 text-purple-500" />
+            <span className="font-semibold">Login as Receptionist</span>
           </Button>
 
           <Button 
             variant="outline" 
-            className="w-full justify-start text-left h-12" 
+            className="w-full justify-start text-left h-12 text-gray-700" 
             onClick={() => handleMockLogin(ROLES.PHARMACIST)}
           >
             <Pill className="w-5 h-5 mr-3 text-orange-500" />
@@ -70,7 +69,7 @@ export default function AdminLogin() {
           
           <Button 
             variant="outline" 
-            className="w-full justify-start text-left h-12" 
+            className="w-full justify-start text-left h-12 text-gray-700" 
             onClick={() => handleMockLogin(ROLES.PATIENT)}
           >
             <User className="w-5 h-5 mr-3 text-gray-500" />

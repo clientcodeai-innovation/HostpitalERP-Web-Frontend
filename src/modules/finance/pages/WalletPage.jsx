@@ -1,22 +1,22 @@
-﻿import React from 'react';
+import React from 'react';
 import { PageHeader } from '../../../shared/layout/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../shared/ui/Card';
 import { Badge } from '../../../shared/ui/Badge';
 import { Wallet as WalletIcon, ArrowUpRight, ArrowDownLeft, Gift, IndianRupee } from 'lucide-react';
 
 const transactions = [
-  { id: 'TXN-801', patient: 'Aarav Sharma', type: 'Credit', amount: 'â‚¹500', reason: 'Referral Bonus', date: '14 Jul 2026', balance: 'â‚¹1,200' },
-  { id: 'TXN-800', patient: 'Diya Patel', type: 'Debit', amount: 'â‚¹300', reason: 'OPD Payment', date: '13 Jul 2026', balance: 'â‚¹700' },
-  { id: 'TXN-799', patient: 'Kabir Singh', type: 'Credit', amount: 'â‚¹1,000', reason: 'Wallet Top-up', date: '12 Jul 2026', balance: 'â‚¹1,000' },
-  { id: 'TXN-798', patient: 'Aarav Sharma', type: 'Debit', amount: 'â‚¹200', reason: 'Discount Applied', date: '10 Jul 2026', balance: 'â‚¹700' },
+  { id: 'TXN-801', patient: 'Aarav Sharma', type: 'Credit', amount: '₹ 500/-', reason: 'Referral Bonus (for Diya Patel)', date: '14 Jul 2026', balance: '₹ 1,200/-' },
+  { id: 'TXN-800', patient: 'Diya Patel', type: 'Debit', amount: '₹ 300/-', reason: 'OPD Payment', date: '13 Jul 2026', balance: '₹ 700/-' },
+  { id: 'TXN-799', patient: 'Kabir Singh', type: 'Credit', amount: '₹ 1,000/-', reason: 'Wallet Top-up', date: '12 Jul 2026', balance: '₹ 1,000/-' },
+  { id: 'TXN-798', patient: 'Aarav Sharma', type: 'Debit', amount: '₹ 200/-', reason: 'Discount Applied', date: '10 Jul 2026', balance: '₹ 700/-' },
 ];
 
 export default function WalletPage() {
   return (
     <div className="space-y-6">
-      <PageHeader title="Wallet & Referrals" description="Manage patient wallet credits, debits, referral bonuses, and discount tracking." breadcrumbs={[{ label: 'Admin' }, { label: 'Finance' }, { label: 'Wallet' }]} />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[{ label: 'Total Balance', value: 'â‚¹45,200', icon: WalletIcon },{ label: 'Credits This Month', value: 'â‚¹12,800', icon: ArrowDownLeft },{ label: 'Debits This Month', value: 'â‚¹8,400', icon: ArrowUpRight },{ label: 'Referral Bonuses', value: 'â‚¹3,500', icon: Gift }].map((k,i)=>(
+      <PageHeader title="Wallet" description="Manage patient wallet credits, debits, and discount tracking." breadcrumbs={[{ label: 'Admin' }, { label: 'Finance' }, { label: 'Wallet' }]} />
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[{ label: 'Total Balance', value: '₹ 45,200/-', icon: WalletIcon },{ label: 'Credits This Month', value: '₹ 12,800/-', icon: ArrowDownLeft },{ label: 'Debits This Month', value: '₹ 8,400/-', icon: ArrowUpRight }].map((k,i)=>(
           <Card key={i}><CardContent className="p-4"><div className="flex items-center justify-between mb-1"><span className="text-sm text-muted-foreground">{k.label}</span><k.icon className="w-4 h-4 text-muted-foreground" /></div><p className="text-2xl font-bold">{k.value}</p></CardContent></Card>
         ))}
       </div>

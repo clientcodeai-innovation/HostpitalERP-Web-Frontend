@@ -1,10 +1,16 @@
 import React from 'react';
-import { Users, Calendar, DollarSign, Activity } from 'lucide-react';
+import { Users, Calendar, IndianRupee, Activity } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../../../shared/ui/Card';
 import { Badge } from '../../../shared/ui/Badge';
 import { Button } from '../../../shared/ui/Button';
+import { useToast } from '../../../shared/ui/ToastContext';
+import { useAuth, ROLES } from '../../../app/AuthContext';
 
 export default function AdminDashboard() {
+  const { toast } = useToast();
+  const { user } = useAuth();
+  const isReceptionist = user?.role === ROLES.RECEPTIONIST;
+
   return (
     <div className="space-y-6">
       {/* Page Header */}
@@ -14,8 +20,8 @@ export default function AdminDashboard() {
           <p className="text-muted-foreground mt-1">Overview of hospital performance and daily activities.</p>
         </div>
         <div className="flex items-center space-x-2">
-          <Button variant="outline">Download Report</Button>
-          <Button>New Appointment</Button>
+          <Button variant="outline" onClick={() => toast('Report downloaded successfully!', 'success')}>Download Report</Button>
+          <Button onClick={() => toast('New appointment form opened', 'default')}>New Appointment</Button>
         </div>
       </div>
 
@@ -47,18 +53,21 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Revenue (Monthly)</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">$124,500</div>
-            <p className="text-xs text-muted-foreground mt-1">
-              <span className="text-destructive font-medium">-2%</span> from last month
-            </p>
-          </CardContent>
-        </Card>
+        {/* Revenue Card (Hidden for Receptionist) */}
+        {!isReceptionist && (
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Revenue (Monthly)</CardTitle>
+              <IndianRupee className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">₹ 124,500/-</div>
+              <p className="text-xs text-muted-foreground mt-1">
+                <span className="text-destructive font-medium">-2%</span> from last month
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -75,22 +84,24 @@ export default function AdminDashboard() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-        {/* Main Chart Area Placeholder */}
-        <Card className="col-span-1 lg:col-span-4">
-          <CardHeader>
-            <CardTitle>Revenue Overview</CardTitle>
-            <CardDescription>Monthly revenue breakdown across departments.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center min-h-[300px] border-t border-border/50 mt-4">
-            <div className="text-muted-foreground text-sm flex flex-col items-center">
-              <Activity className="h-8 w-8 mb-2 opacity-20" />
-              Chart Placeholder (Recharts / Chart.js)
-            </div>
-          </CardContent>
-        </Card>
+        {/* Main Chart Area Placeholder (Hidden for Receptionist) */}
+        {!isReceptionist && (
+          <Card className="col-span-1 lg:col-span-4">
+            <CardHeader>
+              <CardTitle>Revenue Overview</CardTitle>
+              <CardDescription>Monthly revenue breakdown across departments.</CardDescription>
+            </CardHeader>
+            <CardContent className="flex items-center justify-center min-h-[300px] border-t border-border/50 mt-4">
+              <div className="text-muted-foreground text-sm flex flex-col items-center">
+                <Activity className="h-8 w-8 mb-2 opacity-20" />
+                Chart Placeholder (Recharts / Chart.js)
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Recent Activities */}
-        <Card className="col-span-1 lg:col-span-3">
+        <Card className={`col-span-1 ${isReceptionist ? 'lg:col-span-7' : 'lg:col-span-3'}`}>
           <CardHeader>
             <CardTitle>Recent Activities</CardTitle>
             <CardDescription>Latest appointments and updates.</CardDescription>

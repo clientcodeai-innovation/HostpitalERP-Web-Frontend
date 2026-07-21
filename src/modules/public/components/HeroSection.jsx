@@ -13,7 +13,7 @@ const slides = [
     tagline: 'Natural Healing for Your Little Ones',
     heading: 'Gentle Care,',
     highlight: 'Natural Cure',
-    description: 'Ayurvedic pediatric care with compassion â€” safe, gentle remedies for a healthier childhood.',
+    description: 'Ayurvedic pediatric care with compassion - safe, gentle remedies for a healthier childhood.',
   },
   {
     image: slide2,

@@ -1,19 +1,65 @@
-﻿import React from 'react';
+import React from 'react';
 import { PageHeader } from '../../../shared/layout/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../../../shared/ui/Card';
 import { Badge } from '../../../shared/ui/Badge';
 import { Button } from '../../../shared/ui/Button';
 import { Input } from '../../../shared/ui/Input';
-import { Plus, Thermometer, HeartPulse, Stethoscope, ClipboardList, CalendarCheck } from 'lucide-react';
+import { Plus, Thermometer, HeartPulse, Stethoscope, ClipboardList, CalendarCheck, FileText, Video } from 'lucide-react';
+import { useAuth, ROLES } from '../../../app/AuthContext';
 
 export default function ConsultationsPage() {
+  const { user } = useAuth();
+
+  if (user?.role === ROLES.PATIENT) {
+    return (
+      <div className="space-y-6">
+        <PageHeader
+          title="My Consultations"
+          description="View your past consultation records and clinical notes."
+        />
+        <Card>
+          <CardHeader><CardTitle className="text-base">Consultation History</CardTitle></CardHeader>
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead><tr className="border-b bg-muted/30">
+                  <th className="h-10 px-4 text-left font-medium text-muted-foreground">Date</th>
+                  <th className="h-10 px-4 text-left font-medium text-muted-foreground">Doctor</th>
+                  <th className="h-10 px-4 text-left font-medium text-muted-foreground">Diagnosis</th>
+                  <th className="h-10 px-4 text-left font-medium text-muted-foreground">Type</th>
+                  <th className="h-10 px-4 text-left font-medium text-muted-foreground">Actions</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    { date: '12 Jul 2026', doctor: 'Dr. Vijay - General', diag: 'Bronchitis', type: 'In-person' },
+                    { date: '01 Jun 2026', doctor: 'Dr. Sarah - Cardiology', diag: 'Routine Checkup', type: 'Video' },
+                  ].map((c, i) => (
+                    <tr key={i} className="border-b hover:bg-muted/30 transition-colors">
+                      <td className="p-4 text-muted-foreground">{c.date}</td>
+                      <td className="p-4 font-medium">{c.doctor}</td>
+                      <td className="p-4">{c.diag}</td>
+                      <td className="p-4"><Badge variant="outline">{c.type}</Badge></td>
+                      <td className="p-4 flex gap-2">
+                        <Button variant="outline" size="sm" className="h-8 text-xs"><FileText className="w-3.5 h-3.5 mr-1" /> Summary</Button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <PageHeader
         title="Consultation Workflow"
         description="Chief complaints, vitals, diagnosis, treatment plans, and follow-ups."
         breadcrumbs={[{ label: 'Admin' }, { label: 'Patient Care' }, { label: 'Consultations' }]}
-        actions={[{ label: 'Start Consultation', icon: Plus }]}
+        actions={user?.role === ROLES.RECEPTIONIST ? [] : [{ label: 'Start Consultation', icon: Plus }]}
       />
 
       {/* Active Consultation Demo */}
@@ -21,8 +67,11 @@ export default function ConsultationsPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Active Consultation â€” Aarav Sharma</CardTitle>
-              <CardDescription>Token T-01 Â· Dr. Vijay Â· 14 Jul 2026</CardDescription>
+              <CardTitle className="mb-2">Active Consultation - Aarav Sharma</CardTitle>
+              <CardDescription className="flex flex-col gap-1">
+                <span>Token T-01 · Dr. Vijay · 14 Jul 2026</span>
+                <span className="font-medium text-foreground/80">Age: 3Y 2M | Gender: Male | Height: 96 cm | Mobile: +91 98765 43210</span>
+              </CardDescription>
             </div>
             <Badge>In Progress</Badge>
           </div>
@@ -33,7 +82,7 @@ export default function ConsultationsPage() {
             <h3 className="text-sm font-semibold mb-3 flex items-center gap-2"><Thermometer className="w-4 h-4 text-primary" /> Vitals</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {[
-                { label: 'Temperature', value: '98.6Â°F' },
+                { label: 'Temperature', value: '98.6°F' },
                 { label: 'Weight', value: '14.2 kg' },
                 { label: 'Height', value: '96 cm' },
                 { label: 'Heart Rate', value: '110 bpm' },

@@ -40,7 +40,7 @@ export default function WhatsAppPage() {
             {['appointment_reminder', 'prescription_ready', 'followup_reminder', 'welcome_message', 'payment_receipt', 'vaccination_due'].map((t, i) => (
               <div key={i} className="border border-border rounded-lg p-3 hover:border-primary/50 transition-colors cursor-pointer">
                 <p className="text-sm font-medium font-mono">{t}</p>
-                <p className="text-xs text-muted-foreground mt-1">Approved Â· WhatsApp Business</p>
+                <p className="text-xs text-muted-foreground mt-1">Approved · WhatsApp Business</p>
               </div>
             ))}
           </div>

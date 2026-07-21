@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext(null);
@@ -15,7 +16,7 @@ export const ROLES = {
   SUPER_ADMIN: 'super_admin',
   CLINIC_ADMIN: 'clinic_admin',
   DOCTOR: 'doctor',
-  FRONT_DESK: 'front_desk',
+  RECEPTIONIST: 'receptionist',
   PHARMACIST: 'pharmacist',
   PATIENT: 'patient'
 };

@@ -18,7 +18,7 @@ const statusColors = { Sent: 'default', Failed: 'destructive', Queued: 'secondar
 export default function NotificationsPage() {
   return (
     <div className="space-y-6">
-      <PageHeader title="Notification Center" description="Email, SMS, WhatsApp, push notifications â€” templates, logs, and automation rules." breadcrumbs={[{ label: 'Admin' }, { label: 'Communication' }, { label: 'Notifications' }]} actions={[{ label: 'New Template', icon: Plus }]} />
+      <PageHeader title="Notification Center" description="Email, SMS, WhatsApp, push notifications - templates, logs, and automation rules." breadcrumbs={[{ label: 'Admin' }, { label: 'Communication' }, { label: 'Notifications' }]} actions={[{ label: 'New Template', icon: Plus }]} />
       {/* Channel Tabs */}
       <div className="flex gap-2 flex-wrap">
         {['All', 'WhatsApp', 'Email', 'SMS', 'Push'].map((ch, i) => (

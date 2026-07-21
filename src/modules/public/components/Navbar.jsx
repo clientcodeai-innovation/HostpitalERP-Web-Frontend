@@ -143,8 +143,8 @@ export default function Navbar() {
               <Leaf className="w-6 h-6 text-primary" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold leading-none text-foreground">Hari Om</span>
-              <span className="text-xs font-semibold text-primary tracking-wider uppercase">Ayurved Clinic</span>
+              <span className="text-xl font-bold leading-none text-foreground">Bachpan</span>
+              <span className="text-xs font-semibold text-primary tracking-wider uppercase">Hospital</span>
             </div>
           </a>
 
@@ -193,7 +193,7 @@ export default function Navbar() {
             <Link to="/admin/login" className="hidden lg:inline-block">
               <Button variant="ghost" size="sm" className="gap-1.5">
                 <LogIn className="w-3.5 h-3.5" />
-                Admin
+                Login
               </Button>
             </Link>
             
@@ -275,7 +275,7 @@ export default function Navbar() {
               className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              <User className="w-4 h-4" /> Admin Portal
+              <LogIn className="w-4 h-4" /> Login
             </Link>
             <a href="#appointment" className="mt-1" onClick={() => setMobileOpen(false)}>
               <Button className="w-full gap-2">
